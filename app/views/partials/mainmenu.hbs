@@ -1,0 +1,11 @@
+<nav class="ui top menu">
+  <header class="header item"><a href="/home"> Tweets </a></header>
+  <div class="right menu">
+    <a id="tweets"   class= "item" href="/timeline/{{ user._id }}"> Timeline</a>
+    <a id="logout" class= "item" href="/logout"> Logout</a>
+  </div>
+</nav>
+
+<script>
+  $("#{{_id}}").addClass("active item");
+</script>

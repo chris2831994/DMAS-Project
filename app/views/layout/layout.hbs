@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.js"></script>
+    <link rel="stylesheet" media="screen" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.css">
+    <link rel="stylesheet" media="screen" href="css/main.css">
+  </head>
+  <body>
+    <section class='ui grid container'>
+      <section class='sixteen wide column'>
+        {{#if auth}}
+          {{> mainmenu }}
+        {{else}}
+          {{> welcomemenu }}
+        {{/if}}
+      </section>
+      <section class='three wide column'>
+        {{#if auth}}
+         {{> profile}}
+        {{else}}
+         {{> signup}}
+        {{/if}}
+      </section>
+      <section class='ten wide column'>
+        {{{content}}}
+      </section>
+      <section class='three wide column'>
+        {{#if auth}}
+          {{> trending}}
+        {{else}}
+          {{> login}}
+        {{/if}}
+      </section>
+    </section>
+  </body>
+</html>

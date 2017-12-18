@@ -1,0 +1,12 @@
+<section class='ui raised segment'>
+    <form method='post' action='/bulkDelete'>
+        <div class='ui divided items'>
+            {{#each tweets}}
+                {{> tweet}} 
+            {{/each}}
+        </div>
+        {{#if delete}}
+            <input class='ui submit button' type='submit' name='submit' value='delete selected'>
+        {{/if}}
+    </form>
+</section>

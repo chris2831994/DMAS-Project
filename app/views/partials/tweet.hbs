@@ -1,0 +1,15 @@
+<div class='item'>
+    <div class='content'>
+        <div class="header">
+            <div class='ui checkbox'>
+                <input type="checkbox" name="ids" value="{{_id}}">
+                <label>
+                    <a href="/timeline/{{ author._id }}">
+                        {{ author.firstName }} {{ author.lastName }}</div>
+                    </a>
+                </label>
+            </div>
+        <div class="meta">{{ author.userName }} | {{ formattedDate }}</div>
+        <div class="description"><p>{{ text }}</p></div>
+    </div>
+</div>

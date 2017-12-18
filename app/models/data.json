@@ -1,0 +1,42 @@
+{
+    "users": {
+      "_model": "User",
+      "homer": {
+        "firstName": "Homer",
+        "lastName": "Simpson",
+        "userName": "@elGrandeRicardo",
+        "description": "This is a profile description",
+        "email": "homer@simpson.com",
+        "password": "secret"
+      },
+      "bort":{
+        "firstName": "Bort",
+        "lastName": "Simpson",
+        "userName": "@bartoBlanco",
+        "description": "This is a profile description",
+        "email": "asd@fasd.de",
+        "password": "asd"
+      }
+    },
+    "tweets": {
+      "_model": "Tweet",
+      "first": {
+        "author": "->users.homer",
+        "text": "asdfasd",
+        "date": "=new Date('2017-12-12')",
+        "formattedDate": "Fri Dec 12 2017"
+      },
+      "second": {
+        "author": "->users.homer",
+        "text": "asdfasdasd",
+        "date": "=new Date('2017-12-12')",
+        "formattedDate": "Fri Dec 12 2017"
+      },
+      "third": {
+        "author": "->users.bort",
+        "text": "asdfasd",
+        "date": "=new Date('2017-12-12')",
+        "formattedDate": "Fri Dec 12 2017"
+      }
+    }
+}
