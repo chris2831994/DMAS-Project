@@ -16,7 +16,7 @@ exports.main = {
 
 exports.home = {
   handler: function (request, reply) {
-    User.findOne({email: request.auth.credentials.loggedInUser}).then(user => {
+    User.findOne({email: request.auth.credentials.loggedInUser}).populate('follows').then(user => {
       Tweet.find({ author: user }).populate('author').then(tweets => {
         reply.view('home', {
           title: "Home",
@@ -32,20 +32,44 @@ exports.home = {
   },
 };
 
-exports.showTimeline = {
+exports.showGlobalTimeline = {
   handler: function (request, reply){
-    let userId = request.params.userId;
-    User.findOne({ _id: userId }).then(user => {
-      Tweet.find({author: user}).populate('author').then(tweets => {
-        reply.view('timeline', {
-          title: "Timeline of " + user.firstName + " " + user.lastName,
+    let userId = request.auth.credentials.loggedInUserId;
+    User.findOne({_id: userId}).then(user => {
+      Tweet.find({}).populate('author').then(tweets => {
+        reply.view('globalTimeline', {
+          title: "Showing all tweets",
+          loggedInUser: user,
           user: user,
           tweets: tweets,
           delete: false,
-          auth: true,
+          auth: true
         });
       }).catch(err => {
-        reply.redirect('/');
+        redirect('/home');
+      });
+    });
+  }
+};
+
+exports.showTimeline = {
+  handler: function (request, reply){
+    let userId = request.params.userId;
+    let loggedInUserId = request.auth.credentials.loggedInUserId;
+    User.findOne({_id: loggedInUserId}).then(loggedInUser => {
+      User.findOne({ _id: userId }).then(user => {
+        Tweet.find({author: user}).populate('author').then(tweets => {
+          reply.view('timeline', {
+            title: "Timeline of " + user.firstName + " " + user.lastName,
+            loggedInUser: user,
+            user: user,
+            tweets: tweets,
+            delete: false,
+            auth: true,
+          });
+        }).catch(err => {
+          reply.redirect('/');
+        });
       });
     });
   },

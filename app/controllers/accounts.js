@@ -42,6 +42,7 @@ exports.authenticate = {
         request.cookieAuth.set({
           loggedIn: true,
           loggedInUser: user.email,
+          loggedInUserId: user._id,
         });
         reply.redirect('/home');
       } else {
@@ -52,6 +53,18 @@ exports.authenticate = {
     });
   },
 
+};
+
+exports.follow = {
+  handler: function(request, reply){
+    let loggedInUserId = request.auth.credentials.loggedInUserId;
+    let followUserId = request.params.id;
+    if(loggedInUserId != followUserId){
+
+    } else {
+      reply.redirect('/home');
+    }
+  }
 };
 
 exports.logout = {

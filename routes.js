@@ -14,6 +14,7 @@ module.exports = [
   { method: 'GET', path: '/', config: Tweets.main },
   { method: 'GET', path: '/home', config: Tweets.home },
   { method: 'GET', path: '/timeline/{userId}', config: Tweets.showTimeline },
+  { method: 'GET', path: '/timeline', config: Tweets.showGlobalTimeline },
   { method: 'POST', path: '/tweet', config: Tweets.create },
   { method: 'POST', path: '/deleteTweet', config: Tweets.delete },
   { method: 'POST', path: '/bulkDelete', config: Tweets.bulkDelete },

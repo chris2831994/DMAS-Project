@@ -1,0 +1,12 @@
+<section class='ui raised segment'>
+    <h5>Currently following:</h5>
+    <ul>
+        {{#each user.follows }}
+            <li>
+                <a href="/timeline/{{ _id }}">
+                    {{ userName }}
+                </a>
+            </li>
+        {{/each}}
+    </ul>
+</section>

@@ -7,7 +7,8 @@
         "userName": "@elGrandeRicardo",
         "description": "This is a profile description",
         "email": "homer@simpson.com",
-        "password": "secret"
+        "password": "secret",
+        "follows": []
       },
       "bort":{
         "firstName": "Bort",
@@ -15,7 +16,17 @@
         "userName": "@bartoBlanco",
         "description": "This is a profile description",
         "email": "asd@fasd.de",
-        "password": "asd"
+        "password": "asd",
+        "follows": []
+      },
+      "bart":{
+        "firstName": "Bart",
+        "lastName": "Simpson",
+        "userName": "@DempushiRooru",
+        "description": "This is a profile description",
+        "email": "asdo@fasd.de",
+        "password": "asd",
+        "follows": ["->users.homer", "->users.bort"]
       }
     },
     "tweets": {
