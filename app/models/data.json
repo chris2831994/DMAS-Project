@@ -8,6 +8,7 @@
         "description": "This is a profile description",
         "email": "homer@simpson.com",
         "password": "secret",
+        "profileImage": "profile1.png",
         "follows": []
       },
       "bort":{
@@ -17,6 +18,7 @@
         "description": "This is a profile description",
         "email": "asd@fasd.de",
         "password": "asd",
+        "profileImage": "profile2.png",
         "follows": []
       },
       "bart":{
@@ -26,6 +28,7 @@
         "description": "This is a profile description",
         "email": "asdo@fasd.de",
         "password": "asd",
+        "profileImage": "profile3.png",
         "follows": ["->users.homer", "->users.bort"]
       }
     },
@@ -34,13 +37,13 @@
       "first": {
         "author": "->users.homer",
         "text": "asdfasd",
-        "date": "=new Date('2017-12-12')",
+        "date": "=new Date('2017-10-12')",
         "formattedDate": "Fri Dec 12 2017"
       },
       "second": {
         "author": "->users.homer",
         "text": "asdfasdasd",
-        "date": "=new Date('2017-12-12')",
+        "date": "=new Date('2017-11-12')",
         "formattedDate": "Fri Dec 12 2017"
       },
       "third": {

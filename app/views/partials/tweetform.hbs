@@ -3,11 +3,12 @@
         <div class='ui form'>
             <div class='field'>
                 <label>Tweet to all your friends:</label>
-                <textarea rows='5' name='text'></textarea>
+                <textarea rows='3' name='text'>{{ text }}</textarea>
             </div>
             <div class='field'>
-                <input class='ui submit button' type='submit' name='submit' value='tweet'>
+                <input class='ui submit button' type='submit' value='tweet'>
             </div>
         </div>
     </form>
+    {{> formerror }}
 </section>

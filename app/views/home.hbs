@@ -2,17 +2,15 @@
     <section class='sixteen wide column'>
         {{> mainmenu }}
     </section>
-    <section class='three wide column'>        
+    <section class='four wide column'>        
         {{> profile }}
+        {{> following }}
     </section>
-    <section class='ten wide column'>
+    <section class='twelve wide column'>
         <div class="ui raised segment">
             <h1>Welcome, {{ user.firstName }}!</h1>
             {{> tweetform }}
             {{> tweetlist }}
         </div>
-    </section>
-    <section class="three wide column">
-        {{> following }}
     </section>
 </section>

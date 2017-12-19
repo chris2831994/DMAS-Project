@@ -4,6 +4,11 @@
     </section>
     <section class='four wide column'>        
         {{> profile }}
+        {{#if following}}
+        {{> unfollowButton }}
+        {{else}}
+        {{> followButton }}
+        {{/if}}
     </section>
     <section class="twelve wide column">
         <div class="ui raised segment">

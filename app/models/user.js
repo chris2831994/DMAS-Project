@@ -9,6 +9,7 @@ const userSchema = mongoose.Schema({
   description: String,
   email: String,
   password: String,
+  profileImage: String,
   follows: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',

@@ -42,7 +42,7 @@ exports.authenticate = {
         request.cookieAuth.set({
           loggedIn: true,
           loggedInUser: user.email,
-          loggedInUserId: user._id,
+          loggedInUserId: foundUser._id,
         });
         reply.redirect('/home');
       } else {
@@ -58,12 +58,34 @@ exports.authenticate = {
 exports.follow = {
   handler: function(request, reply){
     let loggedInUserId = request.auth.credentials.loggedInUserId;
-    let followUserId = request.params.id;
+    let followUserId = request.params.userId;
     if(loggedInUserId != followUserId){
-
-    } else {
-      reply.redirect('/home');
+      User.findOne({_id: loggedInUserId}).populate('follows').then(loggedInUser => {
+        loggedInUser.follows.push(followUserId);
+        return loggedInUser.save();
+      });  
     }
+    reply.redirect('/home');
+  }
+};
+
+exports.unfollow = {
+  handler: function(request, reply){
+    let loggedInUserId = request.auth.credentials.loggedInUserId;
+    let followUserId = request.params.userId;
+    if(loggedInUserId != followUserId){
+      User.findOne({_id: loggedInUserId}).populate('follows').then(loggedInUser => {
+        let index = 0;
+        loggedInUser.follows.forEach(user => {
+          if(user._id == followUserId){
+            loggedInUser.follows.splice(index, 1);
+            return loggedInUser.save();
+          }
+          index++;
+        });
+      });  
+    }
+    reply.redirect('/home');
   }
 };
 

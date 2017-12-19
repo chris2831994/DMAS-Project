@@ -17,7 +17,7 @@ exports.main = {
 exports.home = {
   handler: function (request, reply) {
     User.findOne({email: request.auth.credentials.loggedInUser}).populate('follows').then(user => {
-      Tweet.find({ author: user }).populate('author').then(tweets => {
+      Tweet.find({ author: user }).sort({date: 'desc'}).populate('author').then(tweets => {
         reply.view('home', {
           title: "Home",
           user: user,
@@ -36,7 +36,7 @@ exports.showGlobalTimeline = {
   handler: function (request, reply){
     let userId = request.auth.credentials.loggedInUserId;
     User.findOne({_id: userId}).then(user => {
-      Tweet.find({}).populate('author').then(tweets => {
+      Tweet.find({}).sort({date: 'desc'}).populate('author').then(tweets => {
         reply.view('globalTimeline', {
           title: "Showing all tweets",
           loggedInUser: user,
@@ -56,14 +56,18 @@ exports.showTimeline = {
   handler: function (request, reply){
     let userId = request.params.userId;
     let loggedInUserId = request.auth.credentials.loggedInUserId;
-    User.findOne({_id: loggedInUserId}).then(loggedInUser => {
+    User.findOne({_id: loggedInUserId}).populate('follows').then(loggedInUser => {
       User.findOne({ _id: userId }).then(user => {
-        Tweet.find({author: user}).populate('author').then(tweets => {
+        var following = loggedInUser.follows.find(function(current){
+          return current._id + "" === user._id + "";
+        });
+        Tweet.find({author: user}).sort({date: 'desc'}).populate('author').then(tweets => {
           reply.view('timeline', {
             title: "Timeline of " + user.firstName + " " + user.lastName,
             loggedInUser: user,
             user: user,
             tweets: tweets,
+            following: following,
             delete: false,
             auth: true,
           });
@@ -76,6 +80,32 @@ exports.showTimeline = {
 };
 
 exports.create = {
+  validate:{
+    payload:{
+      text: Joi.string().alphanum().min(1).max(140).required(),
+    },
+    options:{
+      abortEarly: false,
+    },
+    failAction: function (request, reply, source, error) {
+      let text = request.payload.text;
+      User.findOne({email: request.auth.credentials.loggedInUser}).populate('follows').then(user => {
+        Tweet.find({ author: user }).sort({date: 'desc'}).populate('author').then(tweets => {
+          reply.view('home', {
+            title: "Home",
+            user: user,
+            tweets: tweets,
+            delete: true,
+            auth: true,
+            text: text,
+            errors: error.data.details,
+          });
+        }).catch(err => {
+          reply.redirect('/');
+        });
+      });
+    },
+  },
   handler: function (request, reply){
     let tweet = null;
     User.findOne({email: request.auth.credentials.loggedInUser}).then(user => {

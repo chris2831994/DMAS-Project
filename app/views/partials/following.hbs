@@ -1,12 +1,19 @@
 <section class='ui raised segment'>
     <h5>Currently following:</h5>
-    <ul>
+    <div class='ui items'>
+        <div class='ui card'>
+            <div class='content'>
+                <a href='/following'>View All</a>
+            </div>
+        </div>
         {{#each user.follows }}
-            <li>
+        <div class='ui card'>
+            <div class='content'>
                 <a href="/timeline/{{ _id }}">
-                    {{ userName }}
+                    <img class='ui avatar image' src="/images/profile/{{ profileImage }}"> {{ userName }}
                 </a>
-            </li>
+            </div>
+        </div>
         {{/each}}
-    </ul>
+    </div>
 </section>
