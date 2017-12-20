@@ -21,6 +21,16 @@
         "profileImage": "profile2.png",
         "follows": []
       },
+      "bert":{
+        "firstName": "Bert",
+        "lastName": "Simpson",
+        "userName": "@YamatoDamashii",
+        "description": "This is a profile description",
+        "email": "asdi@fasd.de",
+        "password": "asd",
+        "profileImage": "profile3.png",
+        "follows": []
+      },
       "bart":{
         "firstName": "Bart",
         "lastName": "Simpson",
@@ -29,7 +39,7 @@
         "email": "asdo@fasd.de",
         "password": "asd",
         "profileImage": "profile3.png",
-        "follows": ["->users.homer", "->users.bort"]
+        "follows": ["->users.homer", "->users.bort", "->users.bert"]
       }
     },
     "tweets": {
@@ -51,6 +61,24 @@
         "text": "asdfasd",
         "date": "=new Date('2017-12-12')",
         "formattedDate": "Fri Dec 12 2017"
+      },
+      "fourth": {
+        "author": "->users.bert",
+        "text": "asdfasd",
+        "date": "=new Date('2015-12-12')",
+        "formattedDate": "Fri Dec 12 2015"
+      },
+      "fifth": {
+        "author": "->users.bert",
+        "text": "asdfasd",
+        "date": "=new Date('2017-11-12')",
+        "formattedDate": "Fri Dec 12 2017"
+      },
+      "sixth": {
+        "author": "->users.bert",
+        "text": "asdfasd",
+        "date": "=new Date('2018-12-12')",
+        "formattedDate": "Fri Dec 12 2018"
       }
     }
 }

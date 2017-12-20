@@ -56,6 +56,9 @@ exports.showTimeline = {
   handler: function (request, reply){
     let userId = request.params.userId;
     let loggedInUserId = request.auth.credentials.loggedInUserId;
+    if(userId === loggedInUserId){
+      reply.redirect('/home');
+    }
     User.findOne({_id: loggedInUserId}).populate('follows').then(loggedInUser => {
       User.findOne({ _id: userId }).then(user => {
         var following = loggedInUser.follows.find(function(current){
@@ -77,6 +80,24 @@ exports.showTimeline = {
       });
     });
   },
+};
+
+exports.showAggregateTimeline = {
+  handler: function(request, reply){
+    let loggedInUserId = request.auth.credentials.loggedInUserId;
+    User.findOne({_id: loggedInUserId}).populate('follows').then(user => {
+      Tweet.find({'author': user.follows}).sort({date: 'desc'}).populate('author').then(tweets => {
+        reply.view('aggregateTimeline', {
+          title: 'Aggregate Timeline',
+          tweets: tweets,
+          loggedInUser: user,
+          user: user,
+        })
+      }).catch(err => {
+        reply.redirect('/home');
+      })
+    });
+  }
 };
 
 exports.create = {
