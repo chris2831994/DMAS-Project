@@ -1,13 +1,13 @@
 <section class="ui card">
     <div class="image">
-        <img src="/images/profile/{{ user.profileImage }}">
+        <img src="{{ user.profileImage }}">
     </div>
     <div class="content">
         <div class="header">
             {{user.firstName}} {{user.lastName}}
         </div>
         <div class="meta">
-            <span>{{user.userName}}</span>
+            <span>@{{user.userName}}</span>
         </div>
         <div class="description">
             <p>

@@ -1,0 +1,42 @@
+<div class="ui stacked fluid form segment">
+    <form action="/updateSettings" method="POST" enctype="multipart/form-data">
+        <div class="field">
+            <label>Change profile image (.jpg, up to 500kB):</label>                            
+            <div class="ui input">
+                <input placeholder="Post Image" type="file" name="profileImage">      
+            </div>
+            <input type="hidden" name="currentImage" value="{{ user.profileImage }}">   
+        </div>
+        <div class="two fields">
+            <div class="field">
+                <label>First Name</label>
+                <input placeholder="First Name" type="text" name="firstName" value="{{ user.firstName }}">
+            </div>
+            <div class="field">
+                <label>Last Name</label>
+                <input placeholder="Last Name" type="text" name="lastName" value="{{ user.lastName }}">
+            </div>
+        </div>
+        <div class="field">
+        <div class="field">
+            <label>User Name</label>
+            <div class="ui labeled input">
+                <div class="ui label">
+                    @
+                </div>
+                <input placeholder="User Name" type="text" name="userName" value="{{ user.userName }}">
+            </div>       
+        </div>    
+        </div>
+        <div class="field">           
+            <label>Email</label>
+            <input placeholder="Email" type="text" name="email" value="{{ user.email }}">
+        </div>
+        <div class="field">
+            <label>Password</label>
+            <input type="password" name="password" value="{{ user.firstName }}">
+        </div>
+        <button class="ui blue submit button">Submit</button>
+    </form>
+    {{> formerror }}
+</div>

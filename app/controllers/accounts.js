@@ -1,7 +1,10 @@
 'use strict';
 
 const User = require('../models/user');
-const Joi = require('joi');
+const BaseJoi = require('joi');
+const ImageExtension = require('joi-image-extension');
+const Joi = BaseJoi.extend(ImageExtension);
+
 
 exports.signup = {
   auth: false,
@@ -61,9 +64,9 @@ exports.follow = {
     let followUserId = request.params.userId;
     if(loggedInUserId != followUserId){
       User.findOne({_id: loggedInUserId}).populate('follows').then(loggedInUser => {
-        loggedInUser.follows.push(followUserId);
+        loggedInUser.follows = loggedInUser.follows.concat([followUserId]);
         return loggedInUser.save();
-      });  
+      }).catch();  
     }
     reply.redirect('/home');
   }
@@ -130,7 +133,7 @@ exports.register = {
 exports.viewSettings = {
   handler: function (request, reply) {
     User.findOne({ email: request.auth.credentials.loggedInUser }).then(foundUser => {
-      reply.view('settings', { title: 'Edit Account Settings', user: foundUser });
+      reply.view('accountSettings', { title: 'Edit Account Settings', user: foundUser });
     }).catch(err => {
       reply.redirect('/');
     });
@@ -142,12 +145,15 @@ exports.updateSettings = {
     payload: {
       firstName: Joi.string().required(),
       lastName: Joi.string().required(),
+      userName: Joi.string().required(),
       email: Joi.string().email().required(),
       password: Joi.string().required(),
+      profileImage: Joi.image().allowTypes('jpg'),
+      currentImage: Joi.string().required(),
     },
 
     failAction: function (request, reply, source, error) {
-      reply.view('settings', {
+      reply.view('accountSettings', {
         title: 'Error changing settings',
         errors: error.data.details,
       }).code(400);
@@ -159,11 +165,17 @@ exports.updateSettings = {
     User.findOne({ email: request.auth.credentials.loggedInUser }).then(user => {
       user.firstName = editedUser.firstName;
       user.lastName = editedUser.lastName;
+      user.userName = editedUser.userName;
       user.email = editedUser.email;
       user.password = editedUser.password;
+      if(editedUser.profileImage == null){
+        user.profileImage = editedUser.currentImage;
+      } else {
+        user.profileImage = "data:image/jpg;base64," + editedUser.profileImage.toString('base64');
+      }    
       return user.save();
     }).then(user => {
-      reply.view('settings', { title: 'Edit Account Settings', user: user });
+      reply.view('accountSettings', { title: 'Edit Account Settings', user: user });
     });
   }
 }

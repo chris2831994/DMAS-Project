@@ -1,6 +1,6 @@
 <div class='item'>
     <div class='ui tiny image'>
-        <img src='/images/profile/{{ author.profileImage }}'>        
+        <img src='{{ author.profileImage }}'>        
     </div>
     <div class='content'>
         <div class="header">
@@ -12,7 +12,12 @@
                     </a>
                 </label>
             </div>
-        <div class="meta">{{ author.userName }} | {{ formattedDate }}</div>
-        <div class="description"><p>{{ text }}</p></div>
+        <div class="meta">@{{ author.userName }} | {{ formattedDate }}</div>
+        <div class="description"><p>{{ text }}</p></div>    
+        <div class="extra">
+            <div class="ui large bordered image">
+                <img src="{{ postedImage }}">
+            </div>
+        </div> 
     </div>
 </div>

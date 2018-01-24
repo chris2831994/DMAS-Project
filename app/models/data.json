@@ -4,41 +4,41 @@
       "homer": {
         "firstName": "Homer",
         "lastName": "Simpson",
-        "userName": "@elGrandeRicardo",
+        "userName": "elGrandeRicardo",
         "description": "This is a profile description",
         "email": "homer@simpson.com",
         "password": "secret",
-        "profileImage": "profile1.png",
+        "profileImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAyCAIAAAClJN76AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4QwTETULvpeljgAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAANJSURBVFjD7ZffShtBFMZnZnfdmARNoDQQ+yc10VqwjVChhWqU+ARC9LYXfahCX0Bv1CuxRFFBLVWSgjUaDQ01MVHBGOIqm83OzkwvpKHGZKPJbhXac7ews7/5vjl75hz48dMpuLtA4E6Db2CNJFFCQCqt2Wzo+Ji43VwuR10PkcfDm4jPZMnhIYlE1Nwpubhg11/wPOX7+1vcbu5RB2ckPn1AYjH1+xYuFCilNV/bT2npA83hQK9eCr29LU8ec83ii0X2I6ktLyuHR4SQ+hulFOTzdGW1lExqw8MWn5dvbYUNpl6xyCJRdWpaPsjciF0OQsBBhkxNy5GoWiyyRtQXi2x1rbS0XNI01lhWyzKb+6woCht4J9byoKb69Q11cUlpmH0ZmsYWl5T1DfV25kejanheuZXhOgcRnleiUfWmeEmi4YVmdVd4EF5QJIneCD87pxQK1NjqVijQ2TmlPj6TJYkEZsxYOmAMJBI4kyV18PE4lmWj4b9/hHgc18HHto2XXjYgtq2LlySaz1NgWuTztCIBr+LPGcbMPDzGTDpneuqpieIBpUBPvSF1pm4V0sEz8/HsHjVbV/D6d7MhUYG4gnc4TDejAnHlwelAFtFEAywidOrgBQE20K3ePDweXhBqmw8h6PMLyJwTQAj0+QUIdWu+z8e7XJwZeJeL8/n4OleO3Y5GghbDDUAIjAQtdjuqg0cIdHfxXq/BGeD18t1d/HVVVWSKIhwPWQ38BSwiHA9ZxWofrIKHELS1oWDQAo3YAIQgGLS0taGqX0O11gwFRG+nAUfg7eSHAmItJUhn12Mhq83WlAM2GxwLWXVc1EtxpxMFBsVm8IFB0elEjc94qVRTLUAqRfRnvJr4dFqbmpb3ErgZ/F4CT03L6bR2ixGTEPBzX5uZkXOntMmulxCwFcNHR2R01PrMw3NcPfWEgJ04npiUT3LUkI6bMXCSoxOT8k4cX2/m+D/7wLMzurJa+rquGjjgXcb5OZ2YlN++aRkcENvbUbn88Zcb3N3Dm5s4vosVhZk0ZmgaW/tSin5TX/QIfr/Q81yAEMD3Hw4jUZzNan+hzS0Hx4GODr7/tQDbHyRN7e31r0F0V+zLbLtPjfZ//H/8P4P/BaUljmJ8GjTRAAAAAElFTkSuQmCC",
         "follows": []
       },
       "bort":{
         "firstName": "Bort",
         "lastName": "Simpson",
-        "userName": "@bartoBlanco",
+        "userName": "bartoBlanco",
         "description": "This is a profile description",
         "email": "asd@fasd.de",
         "password": "asd",
-        "profileImage": "profile2.png",
+        "profileImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAyCAIAAAClJN76AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4QwTEgEwtvABBAAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAANCSURBVFjD7dfbT9NQGADwc05bytYxCaJgJjdZCCQYQhCMM2YPiw/w5As++1f4r/gXGJ4gPhDMMJhwMSgMDLcwwLFsUBqHg6WbLW3PxRdCMswubG1mIn1u8+v3ne+c830w/f4dqN2DQE0fvoJvaE4FjFrHCU6SSErhWnz0/Be6e5/3dTrIE0Ump7KxvcbOT+nv3N8vcA+7xP4h7p6Pe+CzkyfykRnbtqIbVM0ASgu+dhzXThLI2yj0DtR193O+tmp5Zug48UP/Ns9SMiOkjIWhNHNmri5YiZjraZDv8EPRVWHpMUM3tyJ6eJIqybLsqw8JoUpSD0+aWxFm6JVEzwzdWPtifv1MMa6sqqmuGQsfmWmIQ88L5aBg9ObmirE8V7F9+QcYG8tz5ubKzZJv7qwbi+EbJbzIQhiLYXNnvVye5lRjKVxl3NdzsBSmObUs/mJ+hqoZe083qmYu5mdK80SRrfgeY8xenjFmxfeIIpfgrfgu0DVHzndds+K7JXhzf9v20K8SYO5vF+NpTmWZtHP3G8ukrxVgHs+yWYYtB3lssWy2cPSaWuRGsWMDUKoVjh4QDJx+8on86Al1Wr9G1LjZyuNRfb3jXj6Rz0uNjvP5RD7f1IREBxOAxHrU1FSQh7zAtXU5x3NtXZAXipWe0DsAkDP1iJDQO1DizOfb/ai51RG9uZVv95fgkeRxBUL2JwAhVyCEJE+pdgMivrOH7/DbPEx1+PnOHgBR6W4H1onu0dc2bgEk1rtHX8M6sdxWE3m8YiAEIazehhCKgRDyeG/WaIvDQdRuwxKgdr84HKxkypHGxqFbqip0tySNjVc4ZKGGRnEkWA0vjgRRQ2PlMx6RE1Vd7nKi+IxXkMdKUpudwofRanh8GNVmp7CSvMmIySg+OtQ+fWBnp1V2vYwQHN0kKcX98hXf9qiMfc+odbCjT0/QdMqWjpsxRtMpfXrCOtgBjBaOnlGaU43IovV92cYB77IIcll9egIPPhOfvEAe71UaLnkrtmtFN6zYLjAuHBozKMZmZMncigjdfULvgNDdBwCAJ2/fWFur5Kdsyzhd7nnAcVyLT3g8DGODd5zt7Yteg6hmNgCA0n+p0b7lb/n/hv8DTvmaMgnushYAAAAASUVORK5CYII=",
         "follows": []
       },
       "bert":{
         "firstName": "Bert",
         "lastName": "Simpson",
-        "userName": "@YamatoDamashii",
+        "userName": "YamatoDamashii",
         "description": "This is a profile description",
         "email": "asdi@fasd.de",
         "password": "asd",
-        "profileImage": "profile3.png",
+        "profileImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAyCAIAAAClJN76AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4QwTEgIWT9DXOgAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAAMdSURBVFjD7ZdPaxpBGMbnz65rXDUmoVqRJE2QQKAgFHoopRWSD9BTcu636icoOSXQS4qH9JC2FNIQSKmVQBuq1kSNWl11152ZneklCShd/+5ioZn78uN53ndmnwdWv70C0zsITPVIY3zDiQYAp60sllXLuMQzMU4qSAlL/gcu4q1mwSKFTvUEkDKnrb84qa56Fx5hTwwHYk7irWaeaF9p/ZSTOgDc1pX2ud7+iTwhOZTwBB/iwOKkeMEM1vquFw9B55cQ1jCT4aRGrg5J89x3/7nkj0NpZszVE8wgtWMjvyuM7HDsmw+FJYyskd8ltWPBjHHUC2aYVx9J+R3nbLyt5kw3L98Ky1TuPbXzwFY9qR6ZpYOx2TeTYGbpgFSPRjOf1E7MYmokw/sMwiymSO1kWDwnmllMTai714NiihNtKHznYp+TurOvGyf1zsX+YLzVLFDtTAjhLF4IQbUzq1kYgKetDOC6K+8712krMwBv1tOOS781wKyn++E50QCpuPiDI5WeBezCC7MpOHWPLjgVZtNePdf6/FGcuYPcXj0QDLh9uhE96rnb9B7ElMNWFx5hr+u8bkQ3Xgq5ju9GdOO9864agLAXeedt8RDLWF1xD4/VFYjlfqsnzyVc20ckzyUGvPmSPw69UTfg0BuV/PEBeCT7fdENFwxAvugGkv2D4gZEUmBNCsQdLlOBuBRYAxANTjsQK76lbQevAMJe39I2xMqwURN5gkpkE0LowMghVCKbyBMcLWgrkSRSHRgBUuNKJDlOy1GXtyBWJ5KOVXV5a8yShTwhJZycBK+Ek8gTGr/jMT03CZ7puf4dzxbP2jk9v2dpmUnwlpbR83usnRulYgrOWuft/BtAyhOmXiEs1vjCjKK6+ELyrw5x7wWnjbSR3RFmyZHELYQQZsnI7tBGGghur15wTjWz/J5WPzlY8K6nQJtGdoctPFHCz5AcvLXhGk8bGfr7lGoZwDsu1QzOGal8ILVjObguzyXk2XUAALw4fElrny294EidHvopxNgXk+cfwx+vZ13O9v3uHZoeGwDA/6WgfYe/w/83+D/2jJERAlc0hAAAAABJRU5ErkJggg==",
         "follows": []
       },
       "bart":{
         "firstName": "Bart",
         "lastName": "Simpson",
-        "userName": "@DempushiRooru",
+        "userName": "DempushiRooru",
         "description": "This is a profile description",
         "email": "asdo@fasd.de",
         "password": "asd",
-        "profileImage": "profile3.png",
+        "profileImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAyCAIAAAClJN76AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4QwTEgIWT9DXOgAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAAMdSURBVFjD7ZdPaxpBGMbnz65rXDUmoVqRJE2QQKAgFHoopRWSD9BTcu636icoOSXQS4qH9JC2FNIQSKmVQBuq1kSNWl11152ZneklCShd/+5ioZn78uN53ndmnwdWv70C0zsITPVIY3zDiQYAp60sllXLuMQzMU4qSAlL/gcu4q1mwSKFTvUEkDKnrb84qa56Fx5hTwwHYk7irWaeaF9p/ZSTOgDc1pX2ud7+iTwhOZTwBB/iwOKkeMEM1vquFw9B55cQ1jCT4aRGrg5J89x3/7nkj0NpZszVE8wgtWMjvyuM7HDsmw+FJYyskd8ltWPBjHHUC2aYVx9J+R3nbLyt5kw3L98Ky1TuPbXzwFY9qR6ZpYOx2TeTYGbpgFSPRjOf1E7MYmokw/sMwiymSO1kWDwnmllMTai714NiihNtKHznYp+TurOvGyf1zsX+YLzVLFDtTAjhLF4IQbUzq1kYgKetDOC6K+8712krMwBv1tOOS781wKyn++E50QCpuPiDI5WeBezCC7MpOHWPLjgVZtNePdf6/FGcuYPcXj0QDLh9uhE96rnb9B7ElMNWFx5hr+u8bkQ3Xgq5ju9GdOO9864agLAXeedt8RDLWF1xD4/VFYjlfqsnzyVc20ckzyUGvPmSPw69UTfg0BuV/PEBeCT7fdENFwxAvugGkv2D4gZEUmBNCsQdLlOBuBRYAxANTjsQK76lbQevAMJe39I2xMqwURN5gkpkE0LowMghVCKbyBMcLWgrkSRSHRgBUuNKJDlOy1GXtyBWJ5KOVXV5a8yShTwhJZycBK+Ek8gTGr/jMT03CZ7puf4dzxbP2jk9v2dpmUnwlpbR83usnRulYgrOWuft/BtAyhOmXiEs1vjCjKK6+ELyrw5x7wWnjbSR3RFmyZHELYQQZsnI7tBGGghur15wTjWz/J5WPzlY8K6nQJtGdoctPFHCz5AcvLXhGk8bGfr7lGoZwDsu1QzOGal8ILVjObguzyXk2XUAALw4fElrny294EidHvopxNgXk+cfwx+vZ13O9v3uHZoeGwDA/6WgfYe/w/83+D/2jJERAlc0hAAAAABJRU5ErkJggg==",
         "follows": ["->users.homer", "->users.bort", "->users.bert"]
       }
     },

@@ -1,12 +1,18 @@
 <section class='ui raised segment'>
-    <form method='post' action='/tweet'>
+    <form method='post' action='/tweet' enctype="multipart/form-data">
         <div class='ui form'>
             <div class='field'>
                 <label>Tweet to all your friends:</label>
                 <textarea rows='3' name='text'>{{ text }}</textarea>
             </div>
+            <div class="field">
+                <label>Attach an Image to your tweet (.jpg, up to 500kB):</label>
+                <div class="ui action input">
+                    <input placeholder="Post Image" type="file" name="postedImage">      
+                </div>
+            </div>
             <div class='field'>
-                <input class='ui submit button' type='submit' value='tweet'>
+                <input class='ui submit button' type='submit' value='tweet' accept="image/jpg">
             </div>
         </div>
     </form>

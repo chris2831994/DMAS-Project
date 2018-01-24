@@ -10,6 +10,7 @@ const tweetSchema = mongoose.Schema({
     text: String,
     formattedDate: String,
     date: Date,
+    postedImage: String
 });
 
 const Tweet = mongoose.model('Tweet', tweetSchema);

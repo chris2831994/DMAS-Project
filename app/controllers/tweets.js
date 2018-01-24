@@ -1,5 +1,7 @@
 'use strict';
-const Joi = require('joi');
+const BaseJoi = require('joi');
+const ImageExtension = require('joi-image-extension');
+const Joi = BaseJoi.extend(ImageExtension);
 
 const User = require('../models/user');
 const Tweet = require('../models/tweet');
@@ -104,6 +106,7 @@ exports.create = {
   validate:{
     payload:{
       text: Joi.string().alphanum().min(1).max(140).required(),
+      postedImage: Joi.image().allowTypes('jpg')
     },
     options:{
       abortEarly: false,
@@ -135,7 +138,10 @@ exports.create = {
       let date = new Date();
       tweet.date = date;
       tweet.formattedDate = date.toDateString(); 
-      tweet.author = user._id;
+      tweet.author = user._id;    
+
+      tweet.postedImage = "data:image/jpg;base64," + data.postedImage.toString('base64');
+
       return tweet.save();
     }).then(newTweet => {
       reply.redirect('/home');
