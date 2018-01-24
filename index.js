@@ -1,6 +1,7 @@
 'use strict';
 
 const Hapi = require('hapi');
+const corsHeaders = require('hapi-cors-headers');
 
 var server = new Hapi.Server();
 server.connection({ port: process.env.PORT || 4001 });
@@ -38,7 +39,7 @@ server.register([require('inert'), require('vision'), require('hapi-auth-cookie'
   });
   
   server.route(require('./routes'));
-  //server.route(require('./routesapi'));
+  server.route(require('./routesapi'));
 
   server.start((err) => {
     if (err) {
