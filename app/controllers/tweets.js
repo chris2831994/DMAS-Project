@@ -106,6 +106,52 @@ exports.create = {
   validate:{
     payload:{
       text: Joi.string().alphanum().min(1).max(140).required(),
+    },
+    options:{
+      abortEarly: false,
+    },
+    failAction: function (request, reply, source, error) {
+      let text = request.payload.text;
+      User.findOne({email: request.auth.credentials.loggedInUser}).populate('follows').then(user => {
+        Tweet.find({ author: user }).sort({date: 'desc'}).populate('author').then(tweets => {
+          reply.view('home', {
+            title: "Home",
+            user: user,
+            tweets: tweets,
+            delete: true,
+            auth: true,
+            text: text,
+            errors: error.data.details,
+          });
+        }).catch(err => {
+          reply.redirect('/');
+        });
+      });
+    },
+  },
+  handler: function (request, reply){
+    let tweet = null;
+    User.findOne({email: request.auth.credentials.loggedInUser}).then(user => {
+      let data = request.payload;
+      tweet = new Tweet(data);
+      let date = new Date();
+      tweet.date = date;
+      tweet.formattedDate = date.toDateString(); 
+      tweet.author = user._id;    
+      tweet.postedImage = "";
+      return tweet.save();
+    }).then(newTweet => {
+      reply.redirect('/home');
+    }).catch(err => {
+      reply.redirect('/');
+    });
+  }
+};
+
+exports.createImage = {
+  validate:{
+    payload:{
+      text: Joi.string().alphanum().min(1).max(140).required(),
       postedImage: Joi.image().allowTypes('jpg')
     },
     options:{
@@ -139,9 +185,12 @@ exports.create = {
       tweet.date = date;
       tweet.formattedDate = date.toDateString(); 
       tweet.author = user._id;    
-
-      tweet.postedImage = "data:image/jpg;base64," + data.postedImage.toString('base64');
-
+      if(data.postedImage == null){
+        tweet.postedImage = "";
+      } else {
+        tweet.postedImage = "data:image/jpg;base64," + data.postedImage.toString('base64');
+      }
+      
       return tweet.save();
     }).then(newTweet => {
       reply.redirect('/home');
