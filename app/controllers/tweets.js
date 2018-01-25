@@ -97,7 +97,7 @@ exports.showAggregateTimeline = {
         })
       }).catch(err => {
         reply.redirect('/home');
-      })
+      });
     });
   }
 };
