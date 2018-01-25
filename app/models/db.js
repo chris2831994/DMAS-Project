@@ -4,14 +4,15 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 let dbURI = 'mongodb://localhost/tweets';
+if(process.env.NODE_ENV === 'production'){
+    dbURI = process.env.MONGODB_URI;
+}
 
 mongoose.connect(dbURI);
 
 mongoose.connection.on('connected', function () {
     console.log('Mongoose connected to ' + dbURI);
-    if(process.env.NODE_ENV === 'production'){
-        dbURI = process.env.MONGODB_URI;
-    } else  {
+    if(process.env.NODE_ENV != 'production'){
         var seeder = require('mongoose-seeder');
         const data = require('./data.json');
         const User = require('./user');
